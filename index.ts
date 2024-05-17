@@ -20,16 +20,16 @@ adjust the price based on the new color (implement your own logic, e.g., increas
 products array and print each product's details.
 */
 type Product ={
-    name: "string",
-    price:"number",
+    name: string,
+    price:number,
     inventory:{
-        stock:"number",
-        colorOptions:["red","green","blue","yellow","orange"];
+        stock:number,
+        colorOptions:String[];
     }
 }
 let products:Product[] =[
     {
-     name:"Polo shirt",
+     name:"Poloshirt",
      price: 140,
      inventory:{
         stock:10,
@@ -37,12 +37,22 @@ let products:Product[] =[
      }
      },
      {
-        name: "aramani t-shirt";
+        name: "aramani t-shirt",
         price:400,
         inventory:{
             stock:30,
-            colorsOptions:["gray","halfWhite","red","blue","royalBlack"]
+            colorOptions:["gray","halfWhite","red","blue","royalBlack"]
         }
 
+     },
+     {
+        name: "Gul Ahmed",
+        price:350,
+        inventory:{
+            stock:50,
+            colorOptions:["navyblue","red","purple","blue","seagreen"]
+        }
      }
     ]
+    
+        
