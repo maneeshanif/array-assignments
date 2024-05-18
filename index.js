@@ -24,4 +24,6 @@ let products = [
         }
     }
 ];
+function changeColor(a = products, color) {
+}
 export {};
