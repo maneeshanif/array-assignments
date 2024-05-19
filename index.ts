@@ -22,16 +22,16 @@ products array and print each product's details.
 type Product ={
     name: string,
     price:number,
-    inventory:{
+    inven:{
         stock:number,
         colorOptions:String[];
-    }
+    };
 }
 let products:Product[] =[
     {
      name:"Poloshirt",
      price: 140,
-     inventory:{
+     inven:{
         stock:10,
         colorOptions:["red","black","white","blue","green"]
      }
@@ -39,7 +39,7 @@ let products:Product[] =[
      {
         name: "aramani t-shirt",
         price:400,
-        inventory:{
+        inven:{
             stock:30,
             colorOptions:["gray","halfWhite","red","blue","royalBlack"]
         }
@@ -48,13 +48,24 @@ let products:Product[] =[
      {
         name: "Gul Ahmed",
         price:350,
-        inventory:{
+        inven:{
             stock:50,
             colorOptions:["navyblue","red","purple","blue","seagreen"]
         }
      }
     ]
-  
+    function changeColor(prod :Product[],newcolor:string){
+        // prod.inven.colorOptions = newcolor
+        if (newcolor == "red"){
+            console.log("yes")
+        } else {
+         console.log("no");
+            
+        }
+
+    }
+    
+
     
   
     
