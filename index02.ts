@@ -31,6 +31,16 @@ let students:Student[]=[{
     name:"hamza",
     grades:[90,80,50]
 }]
+  function calculateAverageGrade(grade:number[]){
+  let total = 0;
+  grade.map((e) => {total += e;})
+    return total/grade.length
+  }
 
-    
- 
+//   let average = calculateAverageGrade(students[0].grades)
+//   console.log(average);
+
+    students.forEach( obj => {
+    console.log(`Average Grade for Student ${obj.name} is:-  ${calculateAverageGrade(obj.grades).toFixed(2)}`)
+})
+

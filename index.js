@@ -1,98 +1,61 @@
 let products = [
     {
-        name: "Poloshirt",
-        price: 140,
-        inven: {
-            stock: 10,
-            colorOptions: ["red", "black", "white", "blue", "green"]
-        }
+        name: "Polo_t-shirt",
+        price: 2000,
+        inventory: {
+            stock: 100,
+            colorOptions: ["red", "black", "white", "blue"],
+        },
     },
     {
-        name: "aramani t-shirt",
+        name: "Aramani cap",
         price: 400,
-        inven: {
+        inventory: {
             stock: 30,
-            colorOptions: ["gray", "halfWhite", "red", "blue", "royalBlack"]
-        }
+            colorOptions: ["yellow", "red", "blue", "green"],
+        },
     },
     {
-        name: "Gul Ahmed",
-        price: 350,
-        inven: {
+        name: "iphone 14",
+        price: 35000,
+        inventory: {
             stock: 50,
-            colorOptions: ["navyblue", "red", "purple", "blue", "seagreen"]
-        }
-    }
+            colorOptions: ["navyblue", "red", "purple", "blue"],
+        },
+    },
 ];
-function changeColor(prod, newcolor) {
-    // prod.inven.colorOptions = newcolor
-    if (newcolor == "red") {
-        console.log("yes");
+function changeColor(products, newcolor) {
+    if (products.inventory.colorOptions.includes(newcolor)) {
+        products.inventory.colorOptions.push(newcolor);
+        if (newcolor == "red") {
+            products.price *= 1.1;
+            console.log(`The "${newcolor}" one ${products.name} costs ${products.price.toFixed(2)} `);
+            console.log(`The ${newcolor} one ${products.name} costs 10% more than the ordinary one due to being a premium item.`);
+        }
+        else if (newcolor == "blue") {
+            products.price *= 0.95;
+            console.log(`The "${newcolor}" one ${products.name} costs ${products.price.toFixed(2)} `);
+            console.log(`Enjoy 5% off on ${newcolor} ${products.name}!`);
+        }
+        else {
+            console.log(`The "${newcolor}" one ${products.name} costs ${products.price.toFixed(2)} `);
+        }
     }
     else {
-        console.log("no");
+        console.log(`Color "${newcolor}" is not available for ${products.name}.`);
     }
 }
+console.log("\t\t\t\t\t\tProducts available");
+products.forEach((e) => {
+    console.log("-------------------------");
+    console.log(`product name = ${e.name}  `);
+    console.log(`product price = ${e.price}`);
+    console.log(`product stock = ${e.inventory.stock}`);
+    console.log(`product coloravailable = ${e.inventory.colorOptions}`);
+    console.log("-------------------------");
+    console.log("------------------------------------------------------------------------------------------------");
+});
+console.log("------------------------------------------------------------------------------------------------");
+console.log("\t\t\t\t\t\tHere is your cart list\n");
+changeColor(products[2], "blue");
 export {};
-//   // Define a type alias named Product to represent a product
-// type Product = {
-//     name: string;
-//     price: number;
-//     inventory: {
-//       stock: number;
-//       colorOptions: string[];
-//     };
-//   };
-//   // Create an array named products containing at least three product objects
-//   let products: Product[] = [
-//     {
-//       name: "Product 1",
-//       price: 100,
-//       inventory: {
-//         stock: 10,
-//         colorOptions: ["red", "blue", "green"],
-//       },
-//     },
-//     {
-//       name: "Product 2",
-//       price: 200,
-//       inventory: {
-//         stock: 20,
-//         colorOptions: ["yellow", "orange", "purple"],
-//       },
-//     },
-//     {
-//       name: "Product 3",
-//       price: 300,
-//       inventory: {
-//         stock: 30,
-//         colorOptions: ["pink", "black", "white"],
-//       },
-//     },
-//   ];
-//   // Implement a function named changeColor that takes a product object and a new color as input
-//   function changeColor(product: Product, newColor: string) {
-//     // Update the colorOptions property of the product
-//     product.inventory.colorOptions.push(newColor);
-//     // Adjust the price based on the new color
-//     if (newColor === "red") {
-//       product.price *= 1.1; // Increase by 10%
-//     } else if (newColor === "blue") {
-//       product.price *= 0.95; // Decrease by 5%
-//     }
-//   }
-//   // Display each product's name, price, stock, and available colors
-//   function displayProducts() {
-//     for (let product of products) {
-//       console.log(`Product Name: ${product.name}`);
-//       console.log(`Price: ${product.price}`);
-//       console.log(`Stock: ${product.inventory.stock}`);
-//       console.log(`Available Colors: ${product.inventory.colorOptions.join(", ")}`);
-//       console.log();
-//     }
-//   }
-//   // Call the changeColor function to update the product details
-//   changeColor(products[0], "red");
-//   changeColor(products[1], "blue");
-//   // Call the displayProducts function to display the product details
-//   displayProducts();
