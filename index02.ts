@@ -15,6 +15,7 @@ input and returns the average grade for that student.
 4. Display each student's name and average grade. Iterate through the students array,
 calculate the average grade for each student using the calculateAverageGrade
 function, and print their name and average grade. */
+import chalk from "chalk"
 type Student ={
     name:string,
     grades:number[]
@@ -39,8 +40,10 @@ let students:Student[]=[{
 
 //   let average = calculateAverageGrade(students[0].grades)
 //   console.log(average);
-
-    students.forEach( obj => {
-    console.log(`Average Grade for Student ${obj.name} is:-  ${calculateAverageGrade(obj.grades).toFixed(2)}`)
+console.log(chalk.redBright("--------------------------------------------------------------------------------------------------------------------------------"));
+console.log(chalk.blueBright.bgWhite.bold("\t\t\t\t\t\t\tStudent Grades"));
+  students.forEach( obj => {
+    console.log(chalk.hex('33FFE6')(`\n\n\t\t\t\t\tAverage Grade for Student ${obj.name} is:-  ${calculateAverageGrade(obj.grades).toFixed(2)}`))
 })
+console.log(chalk.hex('FFA533')("\n--------------------------------------------------------------------------------------------------------------------------------"));
 
