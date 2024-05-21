@@ -19,7 +19,7 @@ adjust the price based on the new color (implement your own logic, e.g., increas
 4. Display each product's name, price, stock, and available colors. Iterate through the
 products array and print each product's details.
 */
-import chalk from "chalk"
+import chalk from "chalk";
 // console.log(chalk.red(`anees`));
 
 type Product = {
@@ -62,51 +62,83 @@ function changeColor(products: Product, newcolor: string) {
     products.inventory.colorOptions.push(newcolor);
     if (newcolor == "red") {
       products.price *= 1.1;
-      console.log(chalk.redBright.bold.italic(
-        `The "${newcolor}" one ${products.name} costs $${products.price.toFixed(
-          2
-        )} `)
+      console.log(
+        chalk.redBright.bold.italic(
+          `The "${newcolor}" one ${
+            products.name
+          } costs $${products.price.toFixed(2)} `
+        )
       );
-      console.log(chalk.hex("8A33FF").bold.italic.underline(`The ${newcolor} one  ${products.name} costs 10% more than the ordinary one due to being a premium item.`));
-      
+      console.log(
+        chalk
+          .hex("8A33FF")
+          .bold.italic.underline(
+            `The ${newcolor} one  ${products.name} costs 10% more than the ordinary one due to being a premium item.`
+          )
+      );
     } else if (newcolor == "blue") {
       products.price *= 0.95;
-      console.log(chalk.blueBright.bold.italic
-        (`The "${newcolor}" one ${products.name} costs  $${products.price.toFixed(
-          2
-        )} `)
+      console.log(
+        chalk.blueBright.bold.italic(
+          `The "${newcolor}" one ${
+            products.name
+          } costs  $${products.price.toFixed(2)} `
+        )
       );
-      console.log(chalk.green.bold.underline(`Enjoy 5% off on ${newcolor}  ${products.name}!`));
-      
+      console.log(
+        chalk.green.bold.underline(
+          `Enjoy 5% off on ${newcolor}  ${products.name}!`
+        )
+      );
     } else {
-      console.log(chalk.magentaBright.bold.italic
-        (`The "${newcolor}" one ${products.name} costs $${products.price.toFixed(
-          2
-        )} `)
+      console.log(
+        chalk.magentaBright.bold.italic(
+          `The "${newcolor}" one ${
+            products.name
+          } costs $${products.price.toFixed(2)} `
+        )
       );
     }
   } else {
-    console.log(chalk.cyanBright.strikethrough(`Color "${newcolor}" is not available for ${products.name}.`));
+    console.log(
+      chalk.cyanBright.strikethrough(
+        `Color "${newcolor}" is not available for ${products.name}.`
+      )
+    );
   }
 }
 
-console.log(chalk.redBright.bold.bgWhiteBright("\t\t\t\t\t\tProducts available"));
+console.log(
+  chalk.redBright.bold.bgWhiteBright("\t\t\t\t\t\tProducts available")
+);
 
 products.forEach((e) => {
   console.log(chalk.yellowBright("-------------------------"));
   console.log(chalk.redBright(`product name = ${e.name}  `));
 
-  console.log(chalk.hex('FFA533')(`product price = $${e.price}`));
-  console.log(chalk.hex('93FF33')(`product stock = ${e.inventory.stock}`));
-  console.log(chalk.hex('33FFE6')(`product coloravailable = ${e.inventory.colorOptions}`));
+  console.log(chalk.hex("FFA533")(`product price = $${e.price}`));
+  console.log(chalk.hex("93FF33")(`product stock = ${e.inventory.stock}`));
+  console.log(
+    chalk.hex("33FFE6")(`product coloravailable = ${e.inventory.colorOptions}`)
+  );
   console.log(chalk.yellowBright("-------------------------"));
-  console.log(chalk.cyanBright("------------------------------------------------------------------------------------------------"));
-
+  console.log(
+    chalk.cyanBright(
+      "------------------------------------------------------------------------------------------------"
+    )
+  );
 });
-console.log(chalk.redBright("------------------------------------------------------------------------------------------------"));
-console.log(chalk.bgWhiteBright.cyanBright.bold("\t\t\t\t\t\tHere is your cart list\n"));
-changeColor(products[1], "red")
-console.log(chalk.whiteBright("------------------------------------------------------------------------------------------------"));
-
-
-
+console.log(
+  chalk.redBright(
+    "------------------------------------------------------------------------------------------------"
+  )
+);
+console.log(
+  chalk.bgWhiteBright.cyanBright.bold("\t\t\t\t\t\tHere is your cart list\n")
+);
+changeColor(products[1], "red");
+console.log(
+  chalk.whiteBright(
+    "------------------------------------------------------------------------------------------------"
+  )
+);
