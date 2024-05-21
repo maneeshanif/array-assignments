@@ -52,7 +52,9 @@ function changeColor(products, newcolor) {
         if (newcolor == "red") {
             products.price *= 1.1;
             console.log(chalk.redBright.bold.italic(`The "${newcolor}" one ${products.name} costs $${products.price.toFixed(2)} `));
-            console.log(chalk.hex("8A33FF").bold.italic.underline(`The ${newcolor} one  ${products.name} costs 10% more than the ordinary one due to being a premium item.`));
+            console.log(chalk
+                .hex("8A33FF")
+                .bold.italic.underline(`The ${newcolor} one  ${products.name} costs 10% more than the ordinary one due to being a premium item.`));
         }
         else if (newcolor == "blue") {
             products.price *= 0.95;
@@ -71,9 +73,9 @@ console.log(chalk.redBright.bold.bgWhiteBright("\t\t\t\t\t\tProducts available")
 products.forEach((e) => {
     console.log(chalk.yellowBright("-------------------------"));
     console.log(chalk.redBright(`product name = ${e.name}  `));
-    console.log(chalk.hex('FFA533')(`product price = $${e.price}`));
-    console.log(chalk.hex('93FF33')(`product stock = ${e.inventory.stock}`));
-    console.log(chalk.hex('33FFE6')(`product coloravailable = ${e.inventory.colorOptions}`));
+    console.log(chalk.hex("FFA533")(`product price = $${e.price}`));
+    console.log(chalk.hex("93FF33")(`product stock = ${e.inventory.stock}`));
+    console.log(chalk.hex("33FFE6")(`product coloravailable = ${e.inventory.colorOptions}`));
     console.log(chalk.yellowBright("-------------------------"));
     console.log(chalk.cyanBright("------------------------------------------------------------------------------------------------"));
 });

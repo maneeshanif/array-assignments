@@ -102,3 +102,7 @@ console.log(chalk.redBright("\t\t\t\t\tQuestion:12\n"));
 // two elements of the fruits array using the method.
 let lastTwoFruits = fruits.slice(2);
 console.log(lastTwoFruits);
+
+
+
+
