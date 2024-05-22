@@ -20,8 +20,6 @@ adjust the price based on the new color (implement your own logic, e.g., increas
 products array and print each product's details.
 */
 import chalk from "chalk";
-// console.log(chalk.red(`anees`));
-
 type Product = {
   name: string;
   price: number;

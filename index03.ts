@@ -94,7 +94,7 @@ console.log(
   )
 );
 
-calculateSalary(employees[3]); //  in this line we give the obj name and index number as an argument
+calculateSalary(employees[1]); //  in this line we give the obj name and index number as an argument
 console.log(
   chalk.hex("FFA533")(
     "------------------------------------------------------------------------------------------------------------------------------"

@@ -56,5 +56,5 @@ let calculateSalary = (emp) => {
 };
 console.log(chalk.magentaBright.bgWhiteBright.bold("\t\t\t\t\t\t employe salaries sheet\n\n"));
 console.log(chalk.redBright("------------------------------------------------------------------------------------------------------------------------------"));
-calculateSalary(employees[3]); //  in this line we give the obj name and index number as an argument
+calculateSalary(employees[1]); //  in this line we give the obj name and index number as an argument
 console.log(chalk.hex("FFA533")("------------------------------------------------------------------------------------------------------------------------------"));
